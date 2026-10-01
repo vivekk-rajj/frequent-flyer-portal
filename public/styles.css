@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frequent Flyer Portal</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Loyalty operations</p>
+        <h1>Frequent Flyer Portal</h1>
+      </div>
+      <button id="refreshButton" class="primary-button">Refresh data</button>
+    </header>
+
+    <main class="layout">
+      <section class="stats" id="stats"></section>
+
+      <section class="panel">
+        <h2>Traveler profiles</h2>
+        <form id="travelerForm" class="stack">
+          <div class="field-grid">
+            <label>
+              Name
+              <input name="name" placeholder="Full name" required />
+            </label>
+            <label>
+              Member number
+              <input name="memberNumber" placeholder="FFP-1005" required />
+            </label>
+            <label>
+              Tier
+              <select name="tier">
+                <option value="Silver">Silver</option>
+                <option value="Gold">Gold</option>
+                <option value="Platinum">Platinum</option>
+              </select>
+            </label>
+            <label>
+              Status
+              <select name="status">
+                <option value="Active">Active</option>
+                <option value="Paused">Paused</option>
+                <option value="Inactive">Inactive</option>
+              </select>
+            </label>
+            <label>
+              Email
+              <input name="email" type="email" placeholder="email@example.com" />
+            </label>
+            <label>
+              Home airport
+              <input name="homeAirport" placeholder="JFK" />
+            </label>
+          </div>
+          <div>
+            <label>
+              Travel preferences
+              <input name="travelPreferences" placeholder="Business, Long-haul" />
+            </label>
+          </div>
+          <button type="submit" class="primary-button">Add traveler</button>
+        </form>
+      </section>
+
+      <section class="panel">
+        <h2>Staff workflow queue</h2>
+        <form id="workflowForm" class="stack">
+          <div class="field-grid">
+            <label>
+              Title
+              <input name="title" placeholder="Miles correction review" required />
+            </label>
+            <label>
+              Assignee
+              <input name="assignee" placeholder="Staff member" required />
+            </label>
+            <label>
+              Priority
+              <select name="priority">
+                <option value="Low">Low</option>
+                <option value="Medium" selected>Medium</option>
+                <option value="High">High</option>
+              </select>
+            </label>
+            <label>
+              Traveler ID
+              <input name="travelerId" placeholder="T-1001" />
+            </label>
+          </div>
+          <button type="submit" class="secondary-button">Create workflow</button>
+        </form>
+      </section>
+
+      <section class="panel wide-panel">
+        <h2>Traveler roster</h2>
+        <div id="travelerList" class="card-grid"></div>
+      </section>
+
+      <section class="panel wide-panel">
+        <h2>Active workflows</h2>
+        <div id="workflowList" class="workflow-list"></div>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
